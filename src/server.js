@@ -23,7 +23,12 @@ mongoose.connect('mongodb+srv://brauerfabiio:monpass!2023@cluster0.9uqug8t.mongo
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
 // ...
-
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static('path/to/your/react/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'path', 'to', 'your', 'react', 'build', 'index.html'));
+    });
+}
 
 
 app.post('/posts', async (req, res) => {
