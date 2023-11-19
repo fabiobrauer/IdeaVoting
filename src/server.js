@@ -8,9 +8,10 @@ import authenticate from './middleware/authenticate.js';
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 
 const corsOptions = {
@@ -26,11 +27,12 @@ mongoose.connect('mongodb+srv://brauerfabiio:monpass!2023@cluster0.9uqug8t.mongo
 .catch(err => console.log(err));
 // ...
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static('path/to/your/react/build'));
+    app.use(express.static('src/server.js'));
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'path', 'to', 'your', 'react', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, '../build', 'index.html'));
     });
 }
+
 
 
 app.post('/posts', async (req, res) => {
