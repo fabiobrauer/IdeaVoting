@@ -12,7 +12,7 @@ import 'dotenv/config';
 const app = express();
 
 const corsOptions = {
-    origin: 'https://your-frontend-domain.com',
+    origin: 'https://idea-voting-387db496fe7a.herokuapp.com/',
     optionsSuccessStatus: 200
 };
 
