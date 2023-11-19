@@ -7,6 +7,8 @@ import bcrypt from "bcryptjs";
 import authenticate from './middleware/authenticate.js';
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
+import path from 'path';
+
 
 
 const app = express();
