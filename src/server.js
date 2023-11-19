@@ -13,11 +13,18 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-
-const corsOptions = {
-    origin: 'https://idea-voting-387db496fe7a.herokuapp.com/',
-    optionsSuccessStatus: 200
-};
+let corsOptions = {};
+if (process.env.NODE_ENV === 'development') {
+    corsOptions = {
+        origin: 'http://localhost:3000',
+        optionsSuccessStatus: 200
+    };
+} else {
+    corsOptions = {
+        origin: 'https://idea-voting-387db496fe7a.herokuapp.com',
+        optionsSuccessStatus: 200
+    };
+}
 
 app.use(cors(corsOptions));
 app.use(express.json()); // for parsing application/json
