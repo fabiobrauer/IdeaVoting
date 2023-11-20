@@ -35,12 +35,6 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
 // ...
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(root, 'dist')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(root,'dist', 'index.html'));
-    });
-}
 
 
 
@@ -334,6 +328,12 @@ app.get('/posts/:postId/dislike', async (req, res) => {
 
 
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(root, 'dist')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(root,'dist', 'index.html'));
+    });
+}
 
 // Start the Express server
 // ...
