@@ -12,6 +12,7 @@ const PostComponent = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
+                console.log("code executed");
                 const response = await axios.get('https://idea-voting-387db496fe7a.herokuapp.com/posts');
                 const sortedPosts = response.data.sort((a, b) => b.like.length - a.like.length);
                 setPosts(sortedPosts);
