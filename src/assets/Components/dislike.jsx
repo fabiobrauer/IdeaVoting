@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './dislike.css'
 
 function DislikeButton({ postId }) {
     const [count, setCount] = useState(0);
@@ -51,7 +52,7 @@ function DislikeButton({ postId }) {
     };
 
     return (
-        <button onClick={toggleDislike}>{count} Dislike</button>
+        <button onClick={toggleDislike} className='button'>{count} Dislike</button>
     );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './DoneBefore.css'
 
 function DoneBeforeButton({ postId }) {
     const [count, setCount] = useState(0);
@@ -55,7 +56,7 @@ function DoneBeforeButton({ postId }) {
     };
 
     return (
-        <button onClick={toggleDoneBefore}>{count} Done Before</button>
+        <button onClick={toggleDoneBefore} className='button'>{count} Done Before</button>
     );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Like.css'
 /* import { fetchPost } from '../../Models/api'; */ // Importing from the api module
 
 function LikeButton({ postId, onLikeChange}) {
@@ -59,7 +60,7 @@ function LikeButton({ postId, onLikeChange}) {
     };
 
     return (
-        <button onClick={toggleLike}>{count} Like</button>
+        <button onClick={toggleLike} className='button'>{count} Like</button>
     );
 }
 
