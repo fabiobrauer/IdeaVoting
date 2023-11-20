@@ -1,0 +1,24 @@
+/* General Styles for User Profile */
+.user-profile {
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff; /* Light text for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute; /* Positioning the component */
+    top: 10;
+    left: 0;
+    margin: 10px;
+    box-shadow: violet 1px 1px 10px 1px;
+}
+
+/* Style for the header */
+.user-profile h2 {
+    color: #4a76a8; /* A different color for heading */
+    margin-bottom: 10px;
+}
+
+/* Style for user details */
+.user-profile p {
+    font-size: 16px;
+    line-height: 1.5;
+}

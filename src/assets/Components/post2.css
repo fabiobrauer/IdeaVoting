@@ -1,0 +1,61 @@
+/* General Styles for the Post Component */
+.post-container {
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff; /* Light text for contrast */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-top: 100px;
+    box-shadow: violet 1px 1px 10px 1px;
+}
+
+/* Style for each post */
+.post {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Style for the post content */
+.post-content {
+    margin-bottom: 10px;
+}
+
+/* Style for buttons */
+.button {
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.button:hover {
+    background-color: #5a86b8;
+}
+
+/* Style for the input field */
+.input-field {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #333333;
+    background-color: #262626;
+    color: white;
+}
+
+/* Style for the login message */
+.login-message {
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+/* Style for the post submission area */
+.post-submission {
+    margin-bottom: 20px;
+}

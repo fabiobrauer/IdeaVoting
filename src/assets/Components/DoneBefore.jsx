@@ -8,7 +8,7 @@ function DoneBeforeButton({ postId }) {
     // Function to fetch the post data
     const fetchPost = async () => {
         try {
-            const response = await axios.get(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/doneBefore`);
+            const response = await axios.get(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/doneBefore`/* `http://localhost:3000/posts/${postId}/doneBefore` */);
             const userId = localStorage.getItem('userId'); // Replace with your user ID retrieval logic
             setCount(response.data.doneBefore.length);
             setDoneBefore(response.data.doneBefore.includes(userId));
@@ -34,14 +34,14 @@ function DoneBeforeButton({ postId }) {
             let response;
             if (doneBefore) {
                 // Send request to mark as not done before
-                response = await axios.delete(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/doneBefore`, {
+                response = await axios.delete(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/doneBefore`/* `http://localhost:3000/posts/${postId}/doneBefore` */, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 });
             } else {
                 // Send request to mark as done before
-                response = await axios.patch(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/doneBefore`, {}, {
+                response = await axios.patch(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/doneBefore`/* `http://localhost:3000/posts/${postId}/doneBefore` */, {}, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }

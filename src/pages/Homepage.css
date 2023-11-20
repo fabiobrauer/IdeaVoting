@@ -1,0 +1,23 @@
+/* General Styles for Homepage */
+.homepage {
+    color: #ffffff; /* Light text for contrast */
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Ensure it covers full height */
+    padding: 100px;
+}
+
+/* Style for main headings */
+.homepage h1, .homepage h2 {
+    color: #5a80ab; /* A different color for headings */
+    text-align: center; /* Center-aligning the headings */
+    margin-bottom: 20px;
+}
+
+/* Style for the post component container */
+.post-component-container {
+    margin-top: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
