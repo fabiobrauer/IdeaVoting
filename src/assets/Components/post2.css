@@ -3,7 +3,7 @@
     background-color: #1e1e1e; /* Dark background */
     color: #ffffff; /* Light text for contrast */
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 100px;
     border-radius: 8px;
     margin-bottom: 15px;
     margin-top: 100px;
@@ -63,11 +63,8 @@
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
     .post-container {
-        width: 90vw;
-        position: absolute;
-        left: 0;
-        margin-left: 10px;
-
+        margin: 5px;
+        padding: 70px;
     }
     .input-field, .button {
         font-size: 1rem; /* Larger font size */
@@ -76,9 +73,6 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 767.98px) {
-    .post-container {
-        padding: 20px;
-    }
     .input-field, .button {
         font-size: 0.8rem; /* Smaller font size */
     }
