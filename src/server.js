@@ -13,7 +13,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-
+const root = path.join(__dirname, '..');
 
 let corsOptions = {};
 if (process.env.NODE_ENV === 'development') {
@@ -36,7 +36,7 @@ mongoose.connect('mongodb+srv://brauerfabiio:monpass!2023@cluster0.9uqug8t.mongo
 .catch(err => console.log(err));
 // ...
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, 'dist')));
+    app.use(express.static(path.join(root, 'dist')));
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname,'dist', 'index.html'));
     });
