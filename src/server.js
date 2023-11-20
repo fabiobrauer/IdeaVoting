@@ -326,6 +326,12 @@ app.get('/posts/:postId/dislike', async (req, res) => {
 
 
 
+app.get('/sitemap.txt', (req, res) => {
+    res.sendFile(path.resolve(root, 'sitemap.txt'));
+});
+
+
+
 
 
 if (process.env.NODE_ENV === "production") {
