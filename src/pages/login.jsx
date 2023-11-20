@@ -1,6 +1,7 @@
 // Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './login.css'
 
 function Login() {
     const navigate = useNavigate();
@@ -47,7 +48,8 @@ function Login() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div className="login-form-container">
+        <form onSubmit={handleSubmit} className="login-form">
             <h2>Login</h2>
             <label htmlFor="email">Email:</label>
             <input
@@ -71,6 +73,7 @@ function Login() {
 
             <button type="submit">Login</button>
         </form>
+    </div>
     );
 }
 

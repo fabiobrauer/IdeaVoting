@@ -1,6 +1,8 @@
 // Register.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './register.css'
+
 
 function Register() {
     const navigate = useNavigate();
@@ -41,9 +43,9 @@ function Register() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div className="register-form-container">
+        <form onSubmit={handleSubmit} className="register-form">
             <h2>Register</h2>
-
 
             <label htmlFor="email">Email:</label>
             <input
@@ -67,6 +69,7 @@ function Register() {
 
             <button type="submit">Register</button>
         </form>
+    </div>
     );
 }
 
