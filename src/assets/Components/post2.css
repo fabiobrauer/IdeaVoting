@@ -59,3 +59,27 @@
 .post-submission {
     margin-bottom: 20px;
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .post-container {
+        padding: 40px;
+    }
+    .input-field, .button {
+        font-size: 1rem; /* Larger font size */
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767.98px) {
+    .post-container {
+        padding: 20px;
+    }
+    .input-field, .button {
+        font-size: 0.8rem; /* Smaller font size */
+    }
+    .post {
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+}
