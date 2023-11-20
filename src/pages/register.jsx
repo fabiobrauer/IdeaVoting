@@ -19,7 +19,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/users', {
+            const response = await fetch('https://idea-voting-387db496fe7a.herokuapp.com/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

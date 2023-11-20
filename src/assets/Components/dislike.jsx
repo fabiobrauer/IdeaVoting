@@ -7,7 +7,7 @@ function DislikeButton({ postId }) {
 
     const fetchPost = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/posts/${postId}/dislike`);
+            const response = await axios.get(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/dislike`);
             const userId = localStorage.getItem('userId'); // Replace with your user ID retrieval logic
             setCount(response.data.dislike.length);
             setDisliked(response.data.dislike.includes(userId));
@@ -31,13 +31,13 @@ function DislikeButton({ postId }) {
         try {
             let response;
             if (disliked) {
-                response = await axios.delete(`http://localhost:3000/posts/${postId}/dislike`, {
+                response = await axios.delete(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/dislike`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 });
             } else {
-                response = await axios.patch(`http://localhost:3000/posts/${postId}/dislike`, {}, {
+                response = await axios.patch(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/dislike`, {}, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }

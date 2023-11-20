@@ -12,7 +12,7 @@ const PostComponent = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/posts');
+                const response = await axios.get('https://idea-voting-387db496fe7a.herokuapp.com/posts');
                 const sortedPosts = response.data.sort((a, b) => b.like.length - a.like.length);
                 setPosts(sortedPosts);
             } catch (error) {
@@ -38,7 +38,7 @@ const PostComponent = () => {
 
         if (newPost.trim() !== '') {
             try {
-                const response = await axios.post('http://localhost:3000/posts', {
+                const response = await axios.post('https://idea-voting-387db496fe7a.herokuapp.com/posts', {
                     content: newPost,
                     // other post data
                 });

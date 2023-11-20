@@ -8,7 +8,7 @@ function LikeButton({ postId, onLikeChange}) {
     const fetchPost = async () => {
         try {
             // Updated URL to include '/like' at the end
-            const response = await axios.get(`http://localhost:3000/posts/${postId}/like`);
+            const response = await axios.get(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/like`);
             setCount(response.data.like.length);
             // Assuming the user ID is stored in local storage or a similar place
             const userId = localStorage.getItem('userId'); 
@@ -34,14 +34,14 @@ function LikeButton({ postId, onLikeChange}) {
             let response;
             if (liked) {
                 // Send request to unlike the post
-                response = await axios.delete(`http://localhost:3000/posts/${postId}/like`, {
+                response = await axios.delete(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/like`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 });
             } else {
                 // Send request to like the post
-                response = await axios.patch(`http://localhost:3000/posts/${postId}/like`, {}, {
+                response = await axios.patch(`https://idea-voting-387db496fe7a.herokuapp.com/posts/${postId}/like`, {}, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
