@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(cors(corsOptions));
 app.use(express.json()); // for parsing application/json
 // MongoDB connection setup (ensure this is correctly configured)
-mongoose.connect('mongodb+srv://brauerfabiio:monpass!2023@cluster0.9uqug8t.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
 // ...
