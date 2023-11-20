@@ -14,6 +14,7 @@ const PostComponent = () => {
             try {
                 console.log("code executed");
                 const response = await axios.get('https://idea-voting-387db496fe7a.herokuapp.com/posts');
+                console.log("Response data:", response.data);
                 const sortedPosts = response.data.sort((a, b) => b.like.length - a.like.length);
                 setPosts(sortedPosts);
             } catch (error) {
