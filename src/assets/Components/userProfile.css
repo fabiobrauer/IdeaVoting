@@ -4,11 +4,11 @@
     color: #ffffff; /* Light text for contrast */
     padding: 20px;
     border-radius: 8px;
-    position: absolute; /* Positioning the component */
-    top: 10;
-    left: 0;
     margin: 10px;
     box-shadow: violet 1px 1px 10px 1px;
+    position: absolute;
+    top: 12%;
+    left: 0;
 }
 
 /* Style for the header */

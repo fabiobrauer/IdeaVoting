@@ -61,9 +61,13 @@
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .post-container {
-        padding: 40px;
+        width: 90vw;
+        position: absolute;
+        left: 0;
+        margin-left: 10px;
+
     }
     .input-field, .button {
         font-size: 1rem; /* Larger font size */

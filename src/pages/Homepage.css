@@ -3,7 +3,7 @@
     color: #ffffff; /* Light text for contrast */
     font-family: Arial, sans-serif;
     min-height: 100vh; /* Ensure it covers full height */
-    padding: 100px;
+    padding-top: 200px;
 }
 
 /* Style for main headings */
