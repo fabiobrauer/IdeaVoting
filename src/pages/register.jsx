@@ -7,7 +7,7 @@ import './register.css'
 function Register() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        email: '',
+        name: '',
         password: ''
     });
 
@@ -31,7 +31,7 @@ function Register() {
             const data = await response.json();
             console.log('Success:', data);
             setFormData({
-              email: '',
+              name: '',
               password: ''
           });
           navigate('/login');
@@ -47,12 +47,12 @@ function Register() {
         <form onSubmit={handleSubmit} className="register-form">
             <h2>Register</h2>
 
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="name">name:</label>
             <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
+                type="name"
+                id="name"
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 required
             />

@@ -6,7 +6,7 @@ import './login.css'
 function Login() {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({
-        email: '',
+        name: '',
         password: ''
     });
 
@@ -51,12 +51,12 @@ function Login() {
         <div className="login-form-container">
         <form onSubmit={handleSubmit} className="login-form">
             <h2>Login</h2>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="name">name:</label>
             <input
-                type="email"
-                id="email"
-                name="email"
-                value={credentials.email}
+                type="name"
+                id="name"
+                name="name"
+                value={credentials.name}
                 onChange={handleChange}
                 required
             />
