@@ -28,6 +28,13 @@ if (process.env.NODE_ENV === 'development') {
     };
 }
 
+app.use(function(req, res, next) {
+    if (path.extname(req.path).toLowerCase() === '.txt') {
+      res.type('text/plain');
+    }
+    next();
+  });
+
 app.use(cors(corsOptions));
 app.use(express.json()); // for parsing application/json
 // MongoDB connection setup (ensure this is correctly configured)
@@ -325,6 +332,7 @@ app.get('/posts/:postId/dislike', async (req, res) => {
 });
 
 
+  
 
 app.get('/sitemap.txt', (req, res) => {
     res.sendFile(path.resolve(root, 'sitemap.txt'));
