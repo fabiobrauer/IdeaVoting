@@ -14,7 +14,7 @@ function UserProfile() {
     return (
         <div className="user-profile">
             <h2>User Profile</h2>
-            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>User:</strong> {user.name}</p>
             <LogoutButton/>
         </div>
     );
