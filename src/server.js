@@ -58,9 +58,9 @@ app.post('/posts', async (req, res) => {
 
 app.post("/users", async (req,res)=>{
     try {
-    const email = req.body.email;
+    const name = req.body.name;
     const password= req.body.password;
-    const credentials = new User({email, password});
+    const credentials = new User({name, password});
     await credentials.save();
     res.status(201).json(credentials);
     }
@@ -74,8 +74,8 @@ app.post("/users", async (req,res)=>{
 // Add a new login route
 app.post('/login', async (req, res) => {
     try {
-        // Find user by email
-        const user = await User.findOne({ email: req.body.email });
+        // Find user by name
+        const user = await User.findOne({ name: req.body.name });
         if (!user) {
             return res.status(401).json({ message: "User not found" });
         }
@@ -87,7 +87,7 @@ app.post('/login', async (req, res) => {
         }
 
         // If credentials are correct, handle the login logic here
-        const userPayload = { id: user._id, email: user.email }; // Corrected user object
+        const userPayload = { id: user._id, name: user.name }; // Corrected user object
         const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' }); // Generate the token
         res.json({ accessToken, message: "Login successful", user }); // Send a single response
         
